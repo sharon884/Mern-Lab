@@ -1,27 +1,14 @@
-let arr = [1, 2, 3,4, 2, 1];
-// let arr2 = [1, 2, 3, 2, 1];
+let arr = [10, 20, 30, 40, 50];
+
+let mid = Math.floor(arr.length / 2);
 
 
-
-function check ( arr ) {
-
-
-let left = 0;
-let right = arr.length-1;
-
-while ( left < right ) {
-
-   if ( arr[left] != arr[right]) return false;
-   left++;
-   right--;
-
+for (let i = 0; i < mid; i++) {
+    console.log();
+    let temp = arr[i];
+    arr[i] = arr[arr.length - i - 1];
+    arr[arr.length - i - 1] = temp;
 
 };
 
-return true;
-
-};
-
-
-console.log(check(arr));
-
+console.log(arr)
