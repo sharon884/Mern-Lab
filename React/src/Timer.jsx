@@ -1,10 +1,16 @@
 import React from "react";
 import { useState,useEffect } from "react";
+import { TimerPro } from "./TimerPro";
 
 
 function Timer () {
 
 const [ Time, setTime  ] = useState(0);
+const [ prop , setProp ] = useState(0);
+
+function fromParrent ( data ) {
+     setProp(data);
+};
 
 
    useEffect(()=> {
@@ -26,7 +32,9 @@ const [ Time, setTime  ] = useState(0);
         <h1> Timer :  {Time}</h1>
         
 
-           {/* <button>Click</button> */}
+         <TimerPro number={Time} from= { fromParrent }/>
+
+         <h1> from child : { prop}</h1>
         </>
     )
 };
