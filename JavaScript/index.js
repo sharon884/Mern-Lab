@@ -1,14 +1,12 @@
-let arr = [10, 20, 30, 40, 50];
+let Str = "Hello world" ;
+let vowels = ["a","e","i","o","u"];
+let result = "";
 
-let mid = Math.floor(arr.length / 2);
-
-
-for (let i = 0; i < mid; i++) {
-    console.log();
-    let temp = arr[i];
-    arr[i] = arr[arr.length - i - 1];
-    arr[arr.length - i - 1] = temp;
-
+for ( let char of Str ) {
+      if ( !vowels.includes(char) ) {
+         result = result + char;
+      };
 };
 
-console.log(arr)
+
+console.log(result);
