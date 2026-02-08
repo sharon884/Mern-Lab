@@ -1,15 +1,27 @@
-let word = "malayaladadfam";
-
-let word2 = "";
-
-let reversed = word.split("").reverse().join("");
+let arr = [1, 2, 3,4, 2, 1];
+// let arr2 = [1, 2, 3, 2, 1];
 
 
-for ( let i = word.length -1 ; i >= 0; i-- ) {
-       word2 = word2 + word[i];
+
+function check ( arr ) {
+
+
+let left = 0;
+let right = arr.length-1;
+
+while ( left < right ) {
+
+   if ( arr[left] != arr[right]) return false;
+   left++;
+   right--;
+
+
 };
 
-console.log(word2); 
+return true;
+
+};
 
 
-console.log(word == word2);
+console.log(check(arr));
+
