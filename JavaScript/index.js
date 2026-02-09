@@ -15,15 +15,24 @@ let arr = [1, 2, 3, 4, 5, 6];
 // console.log(findSum(c));
 
 
-let sum  =  arr.reduce((a,n) => {
+// let sum  =  arr.reduce((a,n) => {
 
-     if ( n % 2 == 0 ) {
-        a = a + n;
-     };
-//  console.log(a);
- return a;
+//      if ( n % 2 == 0 ) {
+//         a = a + n;
+//      };
+// //  console.log(a);
+//  return a;
 
-},0);
+// },0);
 
 
-console.log(sum)
+// console.log(sum)
+
+let sum = 0;
+for ( num of arr ) {
+    if ( num % 2 == 0 ) {
+        sum = sum + num;
+    }
+};
+
+console.log(sum);
