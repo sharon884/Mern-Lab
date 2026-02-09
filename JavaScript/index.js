@@ -1,21 +1,15 @@
-let obj = {
-  a: 10,
-  b: 20,
-  c: 30
+let arr = [10, 5, 20, 8, 15];
+
+let first = -Infinity;
+let second = -Infinity;
+for ( let num of arr ) {
+
+     if ( num > first ) {
+        first = num;
+     }else if ( num > second && num < first ) {
+        second = num;
+     };
 };
 
-function check ( obj ) {
 
-
-
-for ( key in obj ) {
-   if ( typeof obj[key] !== "number" ) {
-    return console.log(false);
-   };
-
-};
-
-return console.log(true);
-};
-
-check(obj)
+console.log(second);
