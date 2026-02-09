@@ -1,15 +1,16 @@
-let arr = [10, 5, 20, 8, 15];
+let arr = [1, 2, 3, 4, 5, 6];
 
-let first = -Infinity;
-let second = -Infinity;
-for ( let num of arr ) {
-
-     if ( num > first ) {
-        first = num;
-     }else if ( num > second && num < first ) {
-        second = num;
-     };
+let obj = {
+    even : [],
+    odd : [],
 };
 
+for ( num of arr ) {
+    if ( num % 2 == 0 ) {
+        obj.even.push(num);
+    }else {
+        obj.odd.push(num);
+    }
+};
 
-console.log(second);
+console.log(obj)
