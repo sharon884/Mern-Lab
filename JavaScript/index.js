@@ -1,34 +1,15 @@
-let arr = ["apple", "banana", "apple", "orange", "banana", "apple"];
+let users = [
+  { name: "A", age: 20 },
+  { name: "B", age: 30 },
+  { name: "C", age: 25 },
+  { name: "D", age: 40 }
+];
 
-let freq = {};
+let arr = [];
 
-for ( num of arr ) {
-    freq[num] = (freq[num] || 0 ) +1;
+for ( num of users ) {
+    console.log(num.age);
+    if ( num.age > 25 )  arr.push(num.name);
 };
 
-console.log(freq);
-
-
-
-
-let f = {};
-for ( let i = 0 ;i < arr.length; i++ ) {
-    let count = 1;
-
-    if ( !f[arr[i]] ) {
-       
-          for ( let j = i+1; j < arr.length; j++ ) {
-        if ( arr[i] === arr[j] ) {
-             count++;
-        };
-
-
-        f[arr[i]] = count;
-    };
-
-    }
-  
-   
-};
-
-console.log(f);
+console.log(arr)
