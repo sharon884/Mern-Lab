@@ -1,14 +1,21 @@
-let employees = [
-  { name: "A", salary: 2000 },
-  { name: "B", salary: 3000 },
-  { name: "C", salary: 4000 }
-];
+let obj = {
+  a: 10,
+  b: 20,
+  c: 30
+};
+
+function check ( obj ) {
 
 
-let a = employees.reduce((a,c) => {
-    a = a + c.salary;
 
-    return a ;
-},0);
+for ( key in obj ) {
+   if ( typeof obj[key] !== "number" ) {
+    return console.log(false);
+   };
 
-console.log(a)
+};
+
+return console.log(true);
+};
+
+check(obj)
