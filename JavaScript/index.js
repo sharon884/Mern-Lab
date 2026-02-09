@@ -1,12 +1,15 @@
-let Str = "Hello world" ;
-let vowels = ["a","e","i","o","u"];
-let result = "";
+let arr = [1, 2, 3, 4, 5, 6];
 
-for ( let char of Str ) {
-      if ( !vowels.includes(char) ) {
-         result = result + char;
-      };
+let c = arr.filter((a ) => a % 2 == 0 );
+console.log(c)
+function findSum ( arr ) {
+    let sum = 0;
+
+    for ( num of arr ) {
+        sum = sum + num;
+    };
+
+    return sum ;
 };
 
-
-console.log(result);
+console.log(findSum(c));
