@@ -1,16 +1,19 @@
-let arr = [1, 2, 3, 4, 5, 6];
+let employees = [
+  { name: "A", dept: "IT", salary: 3000 },
+  { name: "B", dept: "HR", salary: 2000 },
+  { name: "C", dept: "IT", salary: 4000 },
+  { name: "D", dept: "HR", salary: 2500 },
+  { name: "E", dept: "Sales", salary: 3500 }
+];
 
-let obj = {
-    even : [],
-    odd : [],
-};
 
-for ( num of arr ) {
-    if ( num % 2 == 0 ) {
-        obj.even.push(num);
-    }else {
-        obj.odd.push(num);
+let obj = {};
+
+for ( let num of employees ) {
+    if ( !obj[num.dept] ) {
+        obj[num.dept] = 0;
     }
+   obj[num.dept] = obj[num.dept] + num.salary;
 };
 
-console.log(obj)
+console.log(obj);
