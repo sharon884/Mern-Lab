@@ -1,19 +1,14 @@
-let employees = [
-  { name: "A", dept: "IT", salary: 3000 },
-  { name: "B", dept: "HR", salary: 2000 },
-  { name: "C", dept: "IT", salary: 4000 },
-  { name: "D", dept: "HR", salary: 2500 },
-  { name: "E", dept: "Sales", salary: 3500 }
-];
 
 
-let obj = {};
+function check ( num ) {
+    if ( num <= 1 ) return false;
 
-for ( let num of employees ) {
-    if ( !obj[num.dept] ) {
-        obj[num.dept] = 0;
-    }
-   obj[num.dept] = obj[num.dept] + num.salary;
-};
+     for ( let i = 0 ; i < Math.sqrt(num); i++ ) {
+          if ( num % i == 0 ) return false;  
+     };
 
-console.log(obj);
+     return true;
+}
+
+
+console.log(Math.sqrt(7));
