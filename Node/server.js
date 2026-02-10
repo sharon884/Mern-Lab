@@ -2,6 +2,12 @@ import express from "express"
 const app = express();
 
 
+app.use((req, res, next ) => {
+    console.log(req.method);
+    next();
+});
+
+
 app.get("/", ( req, res) => {
     res.send("hai from express server");
 });
@@ -14,6 +20,7 @@ app.get("/add/:num1", ( req, res ) => {
 
     res.send("sum :" + c);
 });
+
 
 
 app.listen(3000,( req,res ) => {
