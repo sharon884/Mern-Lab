@@ -22,6 +22,19 @@ app.get("/add/:num1", ( req, res ) => {
 });
 
 
+app.get("/error",( req, res, next ) => {
+
+     const err = new Error("something went wrong");
+     next(err);
+});
+
+
+
+app.use(( error, req, res, next ) => {
+    console.log(error);
+    return res.status(500).send(error);
+});
+
 
 app.listen(3000,( req,res ) => {
     console.log(`server is listening on port http://localhost:${3000}`)
