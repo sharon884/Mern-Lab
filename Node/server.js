@@ -1,14 +1,21 @@
-const http = require('http');
+import express from "express"
+const app = express();
 
 
-const server = http.createServer((req, res ) => {
-    res.write("hai from server");
-    res.end();
+app.get("/", ( req, res) => {
+    res.send("hai from express server");
 });
 
 
-server.listen(3000,(req,res) => {
-    console.log(`server listening on port http://localhost:${3000}`);
+app.get("/add/:num1", ( req, res ) => {
+    let a = req.params.num1
+    let b = req.query.num2;
+    let c = Number(a) + Number(b);
+
+    res.send("sum :" + c);
 });
 
 
+app.listen(3000,( req,res ) => {
+    console.log(`server is listening on port http://localhost:${3000}`)
+});
