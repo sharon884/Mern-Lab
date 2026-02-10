@@ -1,8 +1,23 @@
-let arr =  [ 4, 3,6, 7,5,8];
+let arr =  [ 2,2,2,4,5,22,44,22,44,6,7,8];
 
-let arr1 = [];
-for ( let i = arr.length-1; i >= 0 ; i-- ) {
-    arr1.push(arr[i]);
+let freq = {};
+let uniq = [];
+
+
+for ( num of arr ) {
+    freq[ num ] = ( freq[num] | 0 ) +1;
+
 };
 
-console.log(arr1);
+
+
+for ( key in freq ) {
+    console.log(freq[key]);
+
+    if ( freq[key] == 1 ) {
+        uniq.push(key);
+    };
+};
+
+
+console.log(uniq);
