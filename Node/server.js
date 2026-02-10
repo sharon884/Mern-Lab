@@ -1,14 +1,14 @@
-const express = require("express");
-const app = express();
-const PORT = 5000;
+const http = require('http');
 
 
-app.get("/", ( req, res ) => {
-    return res.send("hellow from express server");
+const server = http.createServer((req, res ) => {
+    res.write("hai from server");
+    res.end();
 });
 
 
-app.listen(PORT,()=> {
-    console.log(`server is lisenting on port http://localhost:${PORT}`);
+server.listen(3000,(req,res) => {
+    console.log(`server listening on port http://localhost:${3000}`);
 });
+
 
