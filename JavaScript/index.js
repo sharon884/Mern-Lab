@@ -4,8 +4,10 @@ function greet (name, callback ) {
 };
 
 
-function callback( ) {
-    console.log("this is an example for the callback function");
-};
+// function callback( ) {
+//     console.log("this is an example for the callback function");
+// };
 
-greet("champ", callback );
+greet("champ", function callback (){
+     console.log("this is also an example for the callback function ");
+});
