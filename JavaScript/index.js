@@ -1,13 +1,12 @@
-function greet (name, callback ) {
-    console.log(name);
-    callback();
+const add = function tax ( tax ) {
+      return function reapyable ( amount ) {
+            return tax * amount;
+      };
 };
 
 
-// function callback( ) {
-//     console.log("this is an example for the callback function");
-// };
-
-greet("champ", function callback (){
-     console.log("this is also an example for the callback function ");
-});
+const indianTax = add(0.18);
+const usa = add(0.15);
+console.log(indianTax(5000));
+// console.log(indianTax(6000));
+console.log(usa(5000));
