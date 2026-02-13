@@ -1,4 +1,11 @@
-let arr = [ 1,3,5,6,8];
-const [ one,two, three, four,five ] = arr;
-console.log(one);
-console.log(two);
+function greet (name, callback ) {
+    console.log(name);
+    callback();
+};
+
+
+function callback( ) {
+    console.log("this is an example for the callback function");
+};
+
+greet("champ", callback );
