@@ -1,12 +1,23 @@
-const add = function tax ( tax ) {
-      return function reapyable ( amount ) {
-            return tax * amount;
-      };
+let numbers = [3, 7, 2, 9, 4, 7, 2];
+
+
+function doSome ( numbers )  {
+
+
+for ( let i = 0 ; i < numbers.length ; i++ ) {
+        for ( let j = i+1; j < numbers.length ; j++ ) {
+               if ( numbers[i] == numbers[j] ) {
+                      numbers.splice(j,1);
+               }
+        }
 };
 
 
-const indianTax = add(0.18);
-const usa = add(0.15);
-console.log(indianTax(5000));
-// console.log(indianTax(6000));
-console.log(usa(5000));
+numbers.sort((a,b) => a -b );
+return numbers;
+
+}
+
+
+
+console.log(doSome(numbers));
