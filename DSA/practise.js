@@ -1,27 +1,25 @@
-let arr = [ 3,5,2,7,1];
-
-let swapped = true;
-
-function bubble ( arr ) {
-    for ( let i = 0 ; i < arr.length -1 ; i++ ) {
-         swapped = false;
-         for ( let j = 0 ;  j < arr.length-1; j++ ) {
-              if ( arr[j] > arr[j+1] ) {
-                 let temp = arr[j];
-                 arr[j] = arr[j+1];
-                 arr[j+1] = temp;
-                 swapped = true;
-                };
-            }
-            console.log(arr)
-
-         if ( !swapped ) {
-            break;
-         };
+class Binary {
+    constructor ( value ) {
+        this.value = value;
+        this.left  = null;
+        this.right = null;
     };
 
-    return arr;
+    insert ( value ) {
+         
+        if ( this.value > value ) {
+             if ( this.left == null ) {
+                 this.left = new Binary ( value);
+             }else  {
+                 this.left.insert(value);
+             }
+        }else {
+            if ( this.right == null ) {
+                 this.right = new Binary(value);
+            }else {
+                this.right.insert(value);
+            }
+        }
+    }
 };
 
-
-bubble(arr);
