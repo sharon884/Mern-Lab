@@ -45,37 +45,88 @@
 
 
 
-class Stack {
-       constructor () {
-               this.items = [];
+// class Stack {
+//        constructor () {
+//                this.items = [];
                
-       };
+//        };
 
 
-       push ( value ) {
+//        push ( value ) {
             
-              this.items.push(value);
+//               this.items.push(value);
+//        };
+
+
+//        pop ( value ) {
+//                this.items.pop();
+//        };
+
+
+//        isEmpty () {
+//                return this.items.length === 0;
+//        };
+
+//        size () {
+//                return this.items.length;
+//        };
+
+//        peek () {
+//               return this.items[this.items.length-1];
+//        };
+
+//        print() {
+//                return this.items;
+//        }
+// }
+
+
+class Node {
+       constructor (data) {
+              this.data = data,
+              this.next = null ;
+       };
+};
+
+
+class List {
+       constructor () {
+              this.head = null;
+       };
+
+       append ( value ) {
+              const newNode = new Node(value);
+
+              if ( !this.head ) {
+                     this.head = newNode;
+                     return;
+              };
+
+
+              let current = this.head;
+              while ( !current.next ) {
+                      current = current.next;
+              };
+
+              current.next = newNode;
        };
 
 
-       pop ( value ) {
-               this.items.pop();
+       printList () {
+              let current = this.head;
+              let result = "";
+              while ( current ) {
+                     
+                     result = result + current.data+ "->";
+                     current = current.next;
+
+              };
+
+              result = result + null;
+              console.log( result);
+              return;
        };
 
 
-       isEmpty () {
-               return this.items.length === 0;
-       };
 
-       size () {
-               return this.items.length;
-       };
-
-       peek () {
-              return this.items[this.items.length-1];
-       };
-
-       print() {
-               return this.items;
-       }
 }
