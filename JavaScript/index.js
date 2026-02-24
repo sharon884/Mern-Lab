@@ -179,3 +179,56 @@
 //  let num = 38;
 
 // if ( nums)
+
+
+const users = [
+  { id: 1, name: "A", department: "IT", salary: 60000, projects: ["A1", "A2"] },
+  { id: 2, name: "B", department: "HR", salary: 40000, projects: ["H1"] },
+  { id: 3, name: "C", department: "IT", salary: 75000, projects: ["A1"] },
+  { id: 4, name: "D", department: "Sales", salary: 50000, projects: [] },
+  { id: 5, name: "E", department: "HR", salary: 45000, projects: ["H1", "H2"] }
+];
+
+let it = [];
+let hr = [];
+let sales = [];
+let obj = {
+    
+}
+
+for ( let key in users  ) {
+ 
+   if ( users[key].department == "IT" )  {
+     it.push(users[key]);
+   }
+
+    if ( users[key].department == "HR" )  {
+     hr.push(users[key]);
+   }
+
+    if ( users[key].department == "Sales" )  {
+     sales.push(users[key]);
+   }
+}
+ 
+
+function  find ( dept  ) {
+    let totalSalary = null;
+    let avgSalary = null;
+    let totalProjects = null;
+     for ( let key in dept ) {
+       
+
+        totalSalary = totalSalary + dept[key].salary;
+        totalProjects = totalProjects + dept[key].projects.length;
+
+     }
+
+     avgSalary = totalSalary  % dept.length;
+
+    
+
+}
+
+
+find( it )
