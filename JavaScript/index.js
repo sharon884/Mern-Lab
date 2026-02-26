@@ -4,8 +4,8 @@ let ar = [];
 function check (  a ) {
    for ( let i = 0 ; i < a.length; i++ ) {
     let b = a[i].toLowerCase();
-     if ( arr.includes(b)) {
-         ar.push(arr[i])
+     if ( arr.includes(b) && !ar.includes(b)) {
+         ar.push(b)
      }
    };
 
@@ -14,4 +14,3 @@ function check (  a ) {
 
 check ( a)
 
-console.log("e".toUpperCase())
