@@ -1,14 +1,17 @@
-let arr = "malayalaam";
+let a =  "AEIOUxyz";
+let arr = [ "a","e","i","o","u"];
+let ar = [];
+function check (  a ) {
+   for ( let i = 0 ; i < a.length; i++ ) {
+    let b = a[i].toLowerCase();
+     if ( arr.includes(b)) {
+         ar.push(arr[i])
+     }
+   };
 
-
-function check ( arr ) {
-    for ( let i = 0 ; i < Math.floor(arr.length/2); i++ ) {
-      if ( arr[i] != arr[arr.length-i-1]) {
-        return false;
-      }
-    };
-
-    return true;
+  return  console.log(ar);
 }
 
-console.log(check(arr));
+check ( a)
+
+console.log("e".toUpperCase())
