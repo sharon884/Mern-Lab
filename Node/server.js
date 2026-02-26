@@ -2,15 +2,15 @@ const express = require("express");
 const app = express();
 
 
-// app.use((req,res,next) => {
-//      console.log(req.method);
-//      if ( req.method =="Get" ) {
-//         return res.send("blocked")
-//      }else {
-//         next();
-//      }
-//     //  next();
-// });
+app.use((req,res,next) => {
+     console.log(req.method);
+     if ( req.method =="GET" ) {
+        return res.send("blocked")
+     }else {
+        next();
+     }
+    //  next();
+});
 
 
 app.get("/",( req, res ) => {
