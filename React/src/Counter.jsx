@@ -1,42 +1,35 @@
-import React from "react";
 import { useState } from "react";
-import { useEffect  } from "react";
 
 
-function Counter () {
+function Counter() {
+   const [time, setTime] = useState(0);
 
- const [ count , setCount  ] = useState(0);
-
- function increment () {
-    setCount(prev => prev +1);
- };
-
-
- function decrement () {
-    if ( count >0 ) {
-        setCount( prev => prev -1);
-
-    };
- };
+   const increase = () => {
+      setTime((prev) => prev + 1);
+   };
 
 
- function reset () {
-    setCount(0);
- };
+   const decrease = () => {
+
+     setTime ( ( prev) =>  prev != 0 ? prev -1 : 0 );
+   }
 
 
- 
+   const reset = () => {
+      setTime(0);
+   };
 
 
-    return (
-        <>
-      <h1> {count} </h1> 
-      <button onClick={increment}>increment</button>   
-      <button onClick={decrement}>decrement</button>
-      <button onClick={reset}>reset</button>
-        
-        </>
-    )
-};
+
+   return (
+      <>
+
+         {time}
+         <button onClick={() => increase()}>increase</button>
+         <button onClick={() => decrease()}>decrease</button>
+         <button onClick={() => reset()}> reset </button>
+      </>
+   )
+}
 
 export default Counter;
