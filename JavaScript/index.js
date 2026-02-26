@@ -1,30 +1,20 @@
-let movies = [
-  { name: "Inception", ratings: [5, 4, 5, 4] },
-  { name: "Interstellar", ratings: [5, 5, 4, 5] },
-  { name: "Tenet", ratings: [3, 4, 3] }
-];
+let arr2 =  [1, 2, 3];
+let arr1 =  [2, 3, 4];
 
-let obj = {};
+let arr = [...arr2];
 
-for ( let data of movies ) {
-   if ( !obj[data.name] ) {
-       obj[data.name] = obj[data.name];
+for ( let i = 0 ; i < arr1.length; i++ ) {
+     let flag = true;
+     for ( let j = 0 ; j < arr.length; j++ ) {
+          if ( arr1[i] == arr[j] ) {
+              flag = false;
+          };
+     };
 
-   };
-  //  console.log(data.ratings)?
-
-  let avg = 0;
-   let sum = 0;
-
-  for ( let num of data.ratings ) {
-       sum = sum + num;
-  };
-
-  avg = sum / data.ratings.length;
-  obj[data.name] = avg.toFixed(2);
-
-
+     if ( flag ) {
+        arr.push(arr1[i]);
+     };
 };
 
 
-console.log(obj)
+console.log(arr)
